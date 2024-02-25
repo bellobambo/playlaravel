@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,18 +14,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'hello';
-});
-
-Route::get('/about', function () {
-    return 'About Page';
-});
 
 
-Route::get('/store', function () {
-$category = request('category');
-return 'Your category page  ' . strip_tags($category) ;
+Route::get('/', [HomeController::class,  'index'] );
+
+Route::get('/about/about', [HomeController::class,  'about']);
+
+Route::get('/contact', [HomeController::class, 'contact']);
+
+
+
+Route::get('/store/{category?}/{item?}', function ($category = null, $item = null) {
+
+    if (isset($category)) {
+
+        if(isset($item)){
+            return "you are viewing the store for {$category} for {$item}";
+        }
+
+        return 'you are viewing the store for ' . strip_tags($category);
+    }
+    return 'you are view all instrument';
 });
+
+
+// Route::get('/store', function () {
+//     $category = request('category');
+
+//     if (isset($category)) {
+
+//         return 'Your category page  ' . strip_tags($category);
+//     }
+//     return 'you are view all instrument';
+// });
 
 
