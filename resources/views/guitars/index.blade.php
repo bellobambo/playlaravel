@@ -7,13 +7,14 @@
             @foreach ($guiters as $guiter)
                 <div>
                     <h3>
-                        {{ $guiter['name'] }}
-                        <ul>
-                            <li>
-                                Made By : {{ $guiter['brand'] }}
-                            </li>
-                        </ul>
+                        <a href="{{ route('guitars.show', ['guitar' => $guiter['id']]) }}">{{ $guiter['name'] }}</a>
                     </h3>
+
+                    <ul>
+                        <li>
+                            Made By : {{ $guiter['brand'] }}
+                        </li>
+                    </ul>
                 </div>
             @endforeach
         @else

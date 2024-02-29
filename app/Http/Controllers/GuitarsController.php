@@ -24,7 +24,7 @@ class GuitarsController extends Controller
 
     public function index()
     {
-        return view('guitars.index' , [
+        return view('guitars.index', [
             'guiters' => self::getData(),
             'userInput' => '<script>alert("Hello")</script>',
         ]);
@@ -35,7 +35,7 @@ class GuitarsController extends Controller
      */
     public function create()
     {
-        //
+return view('guitars.create');
     }
 
     /**
@@ -49,9 +49,19 @@ class GuitarsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $guiter)
     {
-        //
+        $guiters = self::getData();
+
+        $index = array_search($guiter, array_column($guiters, 'id'));
+
+        if ($index === false) {
+            abort(404);
+        }
+
+        return view('guitars.show', [
+        'guiter' => $guiters[$index]
+        ]);
     }
 
     /**
