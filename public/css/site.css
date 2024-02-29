@@ -818,3 +818,9 @@ video {
 nav a {
     padding: .5rem;
 }
+
+.form-error{
+    font-size : .75rem;
+    color : red;
+    font-weight: bold;
+}

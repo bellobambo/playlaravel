@@ -13,6 +13,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{url('css/site.css')}}">
+    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+
 </head>
 
 <body class="antialiased bg-white">

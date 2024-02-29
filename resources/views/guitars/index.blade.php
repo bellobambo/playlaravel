@@ -14,6 +14,9 @@
                         <li>
                             Made By : {{ $guiter['brand'] }}
                         </li>
+                        <li>
+                           Year Made  : {{ $guiter['year_name'] }}
+                        </li>
                     </ul>
                 </div>
             @endforeach
