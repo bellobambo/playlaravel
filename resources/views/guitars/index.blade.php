@@ -3,7 +3,6 @@
 
 @section('content')
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
-
         @if (count($guiters) > 0)
             @foreach ($guiters as $guiter)
                 <div>
