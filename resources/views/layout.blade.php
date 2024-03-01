@@ -13,7 +13,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{url('css/site.css')}}">
-    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+
 
 </head>
 
@@ -30,9 +30,7 @@
     </div>
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen  bg-center bg-white  selection:bg-red-500 selection:text-white">
-
         @yield('content')
-
         @yield('scripts')
 
     </div>
